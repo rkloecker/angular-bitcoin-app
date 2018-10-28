@@ -1,5 +1,6 @@
-<<<<<<< HEAD
 # AngularBitcoin
+
+# Angular 7 Demo CryptoCurrenncy Info App based on coinmarketcap API
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
 
@@ -28,5 +29,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 =======
 # angular-bitcoin-app
-Angular 7 Demo CryptoCurrenncy Info App based on coinmarketcap API
->>>>>>> c1e4bf44e8188309e56487e009352fd788b53750
