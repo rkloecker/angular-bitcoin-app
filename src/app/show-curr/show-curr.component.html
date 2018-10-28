@@ -1,4 +1,4 @@
-<div *ngIf="currencies | async as currencies else noData" class="row">
+<div *ngIf="currencies | async as currencies" class="row">
   <div *ngFor="let c of currencies" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
     <div class="card mb-2">
       <div class="card-body">
@@ -10,8 +10,8 @@
         <span class="badge badge-warning">24h % change: ${{c.percent_change_24h}}</span>
         <span class="badge badge-danger">7d % change: ${{c.percent_change_7d}}</span>
       </div>
-      <ng-template #noData>No Data Available</ng-template>
     </div>
+    <!-- <ng-template #noData>No Data Available</ng-template> -->
   </div>
 </div>
 
