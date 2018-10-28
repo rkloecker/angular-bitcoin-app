@@ -1,0 +1,25 @@
+<div *ngIf="currencies | async as currencies else noData" class="row">
+  <div *ngFor="let c of currencies" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="card-title">${{c.name}}</h5>
+        <span class="badge badge-info">Rank: ${{c.rank}}</span>
+        <hr>
+        <span class="badge badge-secondary">Price USD: ${{c.price_usd | currency}}</span>
+        <span class="badge badge-success">1h % change: ${{c.percent_change_1h}}</span>
+        <span class="badge badge-warning">24h % change: ${{c.percent_change_24h}}</span>
+        <span class="badge badge-danger">7d % change: ${{c.percent_change_7d}}</span>
+      </div>
+      <ng-template #noData>No Data Available</ng-template>
+    </div>
+  </div>
+</div>
+
+<!-- <ul *ngIf="currencies | async as currencies else noData">
+    <li *ngFor="let c of currencies">
+
+      {{c.rank}} -  {{{{c.name}} - {{{{c.price_usd | currency}}
+    </li> 
+</ul>
+
+<ng-template #noData>No Data Available</ng-template>  -->
