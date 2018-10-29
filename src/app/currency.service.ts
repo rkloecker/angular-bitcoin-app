@@ -21,6 +21,12 @@ test() {
   return this.http
   .get<[Currency]>(`${this.url}/bitcoin/`);
 }
+//'?limit=' + searchLimit
+getLimitedCurrencyData(limit) {
+  // console.log(`${this.url}?limit=${limit}`)
+  return this.http
+  .get<[Currency]>(`${this.url}?limit=${limit}`);
+}
 }
 
 

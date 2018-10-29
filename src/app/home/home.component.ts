@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) {}
 
   showCurr() {
-    this.router.navigate(["show-curr"]);
+    this.router.navigate(["curr-list"]);
   }
   ngOnInit() {
    
