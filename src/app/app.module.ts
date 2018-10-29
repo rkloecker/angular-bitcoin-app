@@ -8,13 +8,15 @@ import { SearchComponent } from './search/search.component';
 import { ShowCurrComponent } from './show-curr/show-curr.component';
 
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SearchComponent,
-    ShowCurrComponent
+    ShowCurrComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

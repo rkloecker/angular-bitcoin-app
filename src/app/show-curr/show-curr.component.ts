@@ -1,8 +1,11 @@
+import { CurrencyService } from './../currency.service';
 import {Component, OnInit} from '@angular/core';
 import {Observable} from "rxjs/Observable";
+import { Currency } from '../currency';
 import {HttpClient} from "@angular/common/http";
 // import * as _ from 'lodash';
 import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-show-curr',
@@ -10,20 +13,30 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./show-curr.component.css']
 })
 export class ShowCurrComponent implements OnInit {
-  currencies: Observable<any>;
-  URL = 'https://api.coinmarketcap.com/v1/ticker/';
-  constructor(private http:HttpClient) {
+  currencies$: Observable<[Currency]>; 
+  
+  constructor(private cs: CurrencyService) {
   }
 
+
   ngOnInit() {
-      this.currencies = this.http
-          .get<any[]>(this.URL)
-          // .pipe(
-          //   map((res) => res)
-          // );
+      this.currencies$ = this.cs.getCurrencies()
+      // Alternative wenn kein async pipe benutzt wird!!!
+      // .subscribe((data) => {
+      //   this.currencies = data;
+      //   console.log(data)
+      // });;
+      // console.log(this.currencies)
   }
 
 }
+// TODO: implement details page
+// ngOnInit() {
+//   this.hero$ = this.route.paramMap.pipe(
+//     switchMap((params: ParamMap) =>
+//       this.service.getHero(params.get('id')))
+//   );
+// }
 
 
 // interface Course {
