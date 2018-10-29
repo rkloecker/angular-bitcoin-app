@@ -13,6 +13,14 @@ export class CurrencyService {
     return this.http
     .get<[Currency]>(`${this.url}`);
 }
+getCurrency(curr) {
+  return this.http
+  .get<[Currency]>(`${this.url}${curr}/`);
+}
+test() {
+  return this.http
+  .get<[Currency]>(`${this.url}/bitcoin/`);
+}
 }
 
 
