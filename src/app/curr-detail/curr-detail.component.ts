@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, RouterModule, Router, ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { CurrencyService } from './../currency.service';
 import {Observable} from "rxjs/Observable";
 import { Currency } from '../currency';
@@ -12,7 +12,6 @@ import { Currency } from '../currency';
 export class CurrDetailComponent implements OnInit {
 
   currencies$: Observable<[Currency]>;
-  // currency; 
   theId;
   
   constructor(private cs: CurrencyService, private router: Router, private _route: ActivatedRoute) {

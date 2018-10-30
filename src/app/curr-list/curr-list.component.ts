@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Routes, RouterModule, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { CurrencyService } from './../currency.service';
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 import { Currency } from '../currency';
 
 @Component({

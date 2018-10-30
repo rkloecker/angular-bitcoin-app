@@ -1,12 +1,6 @@
 <div id="search-container">
-  
   <div id="search" class="card card-body bg-light mb-2">
-    <!-- <h4>Search for special CryptoCurr</h4> -->
     <form id="search-form" #form="ngForm" (submit)="submit(form.value.searchlimit)">
-      <!-- <div class="form-group">
-        <input type="text"  [(ngModel)]="currname" name="currname" id="search-input" class="form-control mb-3" placeholder="Search Term...">
-      </div> -->
-      
       <h5 class="mt-2">Limit: </h5>
       <div class="form-group">
         <select name="searchlimit" id="searchlimit" class="form-control" [(ngModel)]="searchlimit">
