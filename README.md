@@ -2,8 +2,7 @@
 
 ## Angular 7 Demo CryptoCurrenncy Info App based on coinmarketcap API
 
-### not working (!)[Live Demo](https://rkloecker.github.io/angular-bitcoin-app/)
-### coinmarketcap API changed from v1 to v2
+### coinmarketcap API changed from v1 to v2, App currently not showing any data
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
