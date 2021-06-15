@@ -1,6 +1,6 @@
 <div id="search-container">
   <div id="search" class="card card-body bg-light mb-2">
-    <form id="search-form" #form="ngForm" (submit)="submit(form.value.searchlimit)">
+    <form id="search-form" #form="ngForm">
       <h5 class="mt-2">Limit: </h5>
       <div class="form-group">
         <select name="searchlimit" id="searchlimit" class="form-control" [(ngModel)]="searchlimit">
