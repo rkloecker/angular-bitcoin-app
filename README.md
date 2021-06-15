@@ -2,7 +2,7 @@
 
 # Angular 7 Demo CryptoCurrenncy Info App based on https://api.coingecko.com/
 
-# [Live Demo](https://rkloecker.github.io/angular-bitcoin-app/)
+# Live Demo https://rkloecker.github.io/angular-bitcoin-app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.1.
 
