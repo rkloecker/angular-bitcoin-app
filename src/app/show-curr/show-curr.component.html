@@ -5,10 +5,9 @@
         <h5 class="card-title">{{c.name}}</h5>
         <span class="badge badge-info">Rank: {{c.rank}}</span>
         <hr>
-        <span class="badge badge-secondary">Price USD: {{c.price_usd | currency}}</span>
-        <span class="badge badge-success">1h % change: {{c.percent_change_1h}}</span>
-        <span class="badge badge-warning">24h % change: {{c.percent_change_24h}}</span>
-        <span class="badge badge-danger">7d % change: {{c.percent_change_7d}}</span>
+        <span class="badge badge-secondary">Price USD: {{c.current_price | currency}}</span>
+        <span class="badge badge-success">24h change: {{c.price_change_24h | currency}}</span>
+        <span class="badge badge-warning">24h % change: {{c.price_change_percentage_24h | number : '1.1-2'}} %</span>
       </div>
     </div>
   </div>

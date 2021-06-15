@@ -1,32 +1,43 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { CurrencyService } from './../currency.service';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { FormGroup } from "@angular/forms";
+import { CurrencyService } from "./../currency.service";
 import { Observable } from "rxjs/Observable";
-import { Currency } from '../currency';
+import { Currency } from "../currency";
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  selector: "app-search",
+  templateUrl: "./search.component.html",
+  styleUrls: ["./search.component.css"],
 })
 export class SearchComponent implements OnInit {
+  currencies: Currency[];
+  currencies_total: Currency[];
+  searchlimit = 25;
+  c;
 
-  currname = '';
- 
-  searchlimit=25;
-         
-  @ViewChild('form') form: FormGroup;
+  @ViewChild("form") form: FormGroup;
   currencies$: Observable<[Currency]>;
 
-  constructor(private cs: CurrencyService) {
-  }
+  constructor(private cs: CurrencyService) {}
 
   ngOnInit() {
-    
-  }
-         
-  submit(value) {
-    this.currencies$ = this.cs.getLimitedCurrencyData(value);
+    this.c = this.cs.getCurrencies().subscribe((data) => {
+      this.currencies_total = data;
+      this.currencies = data;
+      // console.log(this.currencies);
+      // console.log("oninit");
+    });
   }
 
+  limit() {
+    // console.log("limit");
+    this.currencies = this.currencies_total.slice(0, this.searchlimit);
+    // console.log(this.searchlimit);
+  }
+
+  ngOnDestroy() {
+    console.log("unsub");
+    this.c.unsubscribe();
+  }
 }
