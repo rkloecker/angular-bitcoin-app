@@ -1,28 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { CurrencyService } from './../currency.service';
+import { CurrencyService } from "./../currency.service";
 import { Observable } from "rxjs/Observable";
-import { Currency } from '../currency';
+import { Currency } from "../currency";
 
 @Component({
-  selector: 'app-curr-list',
-  templateUrl: './curr-list.component.html',
-  styleUrls: ['./curr-list.component.css']
+  selector: "app-curr-list",
+  templateUrl: "./curr-list.component.html",
+  styleUrls: ["./curr-list.component.css"],
 })
 export class CurrListComponent implements OnInit {
+  currencies$: Observable<Currency[]>;
 
-  currencies$: Observable<[Currency]>; 
-  
-  constructor(private cs: CurrencyService, private router: Router) {
-  }
+  constructor(private cs: CurrencyService, private router: Router) {}
 
   ngOnInit() {
-    this.currencies$ = this.cs.getCurrencies()
+    this.currencies$ = this.cs.getCurrencies();
   }
 
   showCurrDetail() {
     this.router.navigate(["curr-detail"]);
   }
-
 }
-

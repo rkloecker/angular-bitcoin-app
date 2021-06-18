@@ -12,9 +12,11 @@ export class CurrencyService {
   url =
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
   getCurrencies() {
-    return this.http.get<[Currency]>(`${this.url}`);
+    return this.http.get<Currency[]>(`${this.url}`);
   }
-  getCurrency(curr) {
-    return this.http.get<[any]>(`${this.url}`);
+  getLimitedCurrencyData(limit) {
+    return this.http
+      .get<Currency[]>(`${this.url}`)
+      .pipe(map((data) => data.slice(0, limit)));
   }
 }

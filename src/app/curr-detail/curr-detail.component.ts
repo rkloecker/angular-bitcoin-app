@@ -10,7 +10,7 @@ import { Currency } from "../currency";
   styleUrls: ["./curr-detail.component.css"],
 })
 export class CurrDetailComponent implements OnInit {
-  currencies$: Observable<[Currency]>;
+  currencies$: Observable<Currency[]>;
   theId;
 
   constructor(
@@ -21,6 +21,6 @@ export class CurrDetailComponent implements OnInit {
 
   ngOnInit() {
     this.theId = this._route.snapshot.paramMap.get("id");
-    this.currencies$ = this.cs.getCurrency(this.theId);
+    this.currencies$ = this.cs.getCurrencies();
   }
 }

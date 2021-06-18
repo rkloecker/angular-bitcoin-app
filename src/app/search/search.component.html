@@ -1,6 +1,6 @@
 <div id="search-container">
   <div id="search" class="card card-body bg-light mb-2">
-    <form id="search-form" #form="ngForm">
+    <form id="search-form" #form="ngForm" (submit)="submit(form.value.searchlimit)">
       <h5 class="mt-2">Limit: </h5>
       <div class="form-group">
         <select name="searchlimit" id="searchlimit" class="form-control" [(ngModel)]="searchlimit">
@@ -11,15 +11,14 @@
           <option value="100">100</option>
         </select>
       </div>
-      <button (click)="limit();$event.preventDefault()" class="btn btn-dark btn-block mt-4">Show current Crypto
-        Currency rates</button>
+      <button type="submit" class="btn btn-dark btn-block mt-4">Show current Crypto Currency rates</button>
 
-      <div *ngIf="currencies" class="row mt-2">
-        <div *ngFor="let c of currencies" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+      <div *ngIf="currencies$ | async as currencies$" class="row mt-2">
+        <div *ngFor="let c of currencies$" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
           <div class="card mb-2">
             <div class="card-body">
               <h5 class="card-title">{{c.name}}</h5>
-              <span class="badge badge-success">Price USD: {{c.current_price | currency}}</span>
+              <span class="badge badge-success">Price USD: {{c.price_usd | currency}}</span>
               <a class="nav-link" [routerLink]="['/curr-detail', c.id]">Show detail
               </a>
             </div>
