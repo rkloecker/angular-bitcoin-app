@@ -18,7 +18,7 @@
           <div class="card mb-2">
             <div class="card-body">
               <h5 class="card-title">{{c.name}}</h5>
-              <span class="badge badge-success">Price USD: {{c.price_usd | currency}}</span>
+              <span class="badge badge-success">Price USD: {{c.current_price | currency}}</span>
               <a class="nav-link" [routerLink]="['/curr-detail', c.id]">Show detail
               </a>
             </div>
